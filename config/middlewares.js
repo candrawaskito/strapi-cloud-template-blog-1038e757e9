@@ -1,9 +1,15 @@
 module.exports = [
-  'strapi::logger',
   'strapi::errors',
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: ['*'], // Ganti jadi ['https://www.figma.com'] jika production
+      headers: ['Content-Type', 'Authorization'],
+    },
+  },
   'strapi::security',
-  'strapi::cors',
   'strapi::poweredBy',
+  'strapi::logger',
   'strapi::query',
   'strapi::body',
   'strapi::session',
